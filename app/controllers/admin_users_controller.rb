@@ -47,10 +47,10 @@ class AdminUsersController < ApplicationController
     redirect_to(admin_users_path)
   end
 
-  private
+private
 
   def admin_user_params
-    params.require(:admin_user).permit(:first_name, :last_name,:email,:username,:password)
+    params.require(:admin_user).permit(:first_name, :last_name, :email, :username, :password)
   end
 
 end

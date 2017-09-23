@@ -5,7 +5,6 @@ class PublicController < ApplicationController
   before_action :setup_navigation
 
   def index
-    # intro text
   end
 
   def show
@@ -13,7 +12,6 @@ class PublicController < ApplicationController
     if @page.nil?
       redirect_to(root_path)
     else
-      # display the page content using show.html.erb
     end
   end
 

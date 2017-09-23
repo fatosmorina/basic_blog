@@ -27,7 +27,6 @@ class SubjectsController < ApplicationController
       flash[:notice] = "Subject created successfully."
       redirect_to(subjects_path)
     else
-      # If save fails, redisplay the form so user can fix problems
       render('new')
     end
   end
@@ -37,15 +36,11 @@ class SubjectsController < ApplicationController
   end
 
   def update
-    # Find a new object using form parameters
     @subject = Subject.find(params[:id])
-    # Update the object
     if @subject.update_attributes(subject_params)
-      # If save succeeds, redirect to the show action
       flash[:notice] = "Subject updated successfully."
       redirect_to(subject_path(@subject))
     else
-      # If save fails, redisplay the form so user can fix problems
       render('edit')
     end
   end
@@ -61,7 +56,7 @@ class SubjectsController < ApplicationController
     redirect_to(subjects_path)
   end
 
-  private
+private
 
   def subject_params
     params.require(:subject).permit(:name, :position, :visible, :created_at)

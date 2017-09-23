@@ -54,7 +54,7 @@ class PagesController < ApplicationController
     redirect_to(pages_path(:subject_id => @subject.id))
   end
 
-  private
+private
 
   def page_params
     params.require(:page).permit(:name, :position, :visible, :permalink)

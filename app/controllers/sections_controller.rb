@@ -54,7 +54,7 @@ class SectionsController < ApplicationController
     redirect_to(sections_path(:page_id => @page.id))
   end
 
-  private
+private
 
   def section_params
     params.require(:section).permit(:name, :position, :visible, :content_type, :content)
